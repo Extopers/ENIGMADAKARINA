@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enigma da Karinah</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f3f3;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #333;
+            background-color: white;
+            border-radius: 8px;
+        }
+        .message {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+        .error {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+            color: red;
+        }
+        input[type="password"] {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Bem-vinda ao Enigma da Karinah!</h1>
+    <p>Digite a senha para descobrir o segredo... apenas 4 digitos</p>
+    <input type="password" id="password" placeholder="Digite a senha">
+    <button onclick="checkPassword()">Verificar</button>
+    <p class="message" id="successMessage">enigmadakarinah@gmail.com ! 🎉</p>
+    <p class="error" id="errorMessage">Senha incorreta. Tente novamente! ❌</p>
+</div>
+
+<script>
+    function checkPassword() {
+        // Defina aqui a senha correta
+        const correctPassword = "1994"; // Altere essa senha para a que você quiser
+        const userInput = document.getElementById("password").value;
+
+        // Verifique se a senha inserida é correta
+        if (userInput === correctPassword) {
+            document.getElementById("successMessage").style.display = "block";
+            document.getElementById("errorMessage").style.display = "none";
+        } else {
+            document.getElementById("errorMessage").style.display = "block";
+            document.getElementById("successMessage").style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
